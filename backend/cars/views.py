@@ -34,6 +34,12 @@ def user_cars(request):
         serializer = CarSerializer(cars, many=True)
         return Response(serializer.data)
 
+@api_view(['GET'])
+@permission_classes([AllowAny])
+def get_all_comments(request):
+    comments = Comment.objects.all()
+    serializer = CommentSerializer(comments, many=True)
+    return Response(serializer.data)
 
 @api_view(['GET', 'POST'])
 @permission_classes([IsAuthenticated])
