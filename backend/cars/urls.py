@@ -7,4 +7,5 @@ urlpatterns = [
     path('', views.user_cars),
     path('all/', views.get_all_cars),
     path('comments/', views.user_comments),
+    path('comments/replies', views.user_replies),
 ]
